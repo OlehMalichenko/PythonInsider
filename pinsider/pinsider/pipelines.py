@@ -64,7 +64,7 @@ class PinsiderPipeline:
 
     def store_db_post(self, item):
         self.curr.execute(
-            """INSERT INTO posts_tb VALUES (?,?,?,?,?)""",
+            """INSERT OR IGNORE INTO posts_tb VALUES (?,?,?,?,?)""",
             (
                     item['post_id'],
                     item['date'],
@@ -77,7 +77,7 @@ class PinsiderPipeline:
 
     def store_db_release(self, item):
         self.curr.execute(
-                """INSERT INTO releases_tb VALUES (?,?,?,?,?,?,?,?)""",
+                """INSERT OR IGNORE INTO releases_tb VALUES (?,?,?,?,?,?,?,?)""",
                 (
                         item['post_id'],
                         item['release_id'],
