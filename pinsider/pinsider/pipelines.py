@@ -22,7 +22,7 @@ class PinsiderPipeline:
 
     def create_tables(self):
         query_posts = """
-                        CREATE TABLE IF NOT EXIST posts_tb
+                        CREATE TABLE IF NOT EXISTS posts_tb
                         (
                             post_id TEXT,
                             date TEXT,
@@ -33,7 +33,7 @@ class PinsiderPipeline:
                         )
                       """
         query_releases = """
-                            CREATE TABLE IF NOT EXIST releases_tb
+                            CREATE TABLE IF NOT EXISTS releases_tb
                             (
                                 post_id TEXT,
                                 release_id TEXT,
@@ -54,7 +54,7 @@ class PinsiderPipeline:
 
     def process_item(self, item, spider):
         name_of_item_class = str(item.__class__.__name__)
-
+        print(f'Name of class {name_of_item_class}')
         if 'PinsiderItemPosts' in name_of_item_class:
             self.store_db_post(item)
         elif 'PinsiderItemRelease' in name_of_item_class:
