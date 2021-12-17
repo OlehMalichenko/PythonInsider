@@ -54,7 +54,7 @@ class PinsiderPipeline:
 
     def process_item(self, item, spider):
         name_of_item_class = str(item.__class__.__name__)
-        print(f'Name of class {name_of_item_class}')
+        # print(f'Name of class {name_of_item_class}')
         if 'PinsiderItemPosts' in name_of_item_class:
             self.store_db_post(item)
         elif 'PinsiderItemRelease' in name_of_item_class:

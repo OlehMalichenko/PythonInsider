@@ -12,8 +12,8 @@ BOT_NAME = 'pinsider'
 SPIDER_MODULES = ['pinsider.spiders']
 NEWSPIDER_MODULE = 'pinsider.spiders'
 
-LOG_LEVEL = 'ERROR'
-
+LOG_LEVEL = 'INFO'
+# LOG_ENABLED = False
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36'
